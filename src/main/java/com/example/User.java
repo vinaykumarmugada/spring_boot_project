@@ -8,8 +8,6 @@ public class User {
     private String email;
 
     // Constructors
-    public User() {
-    }
 
     public User(long id, String name, String email) {
         this.id = id;

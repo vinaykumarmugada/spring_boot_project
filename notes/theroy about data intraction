@@ -1,0 +1,56 @@
+ORM, JPA, and Hibernate—three key concepts in Java for database interaction:
+
+1️⃣ ORM (Object-Relational Mapping)
+Definition: A programming technique to convert data between Java objects (classes) and relational database tables automatically.
+
+Why? Without ORM, you have to write complex SQL queries and manually map database rows to Java objects and vice versa.
+
+Example:
+
+class User {
+    private Long id;
+    private String name;
+}
+
+This object can be automatically stored in and retrieved from a database table users.
+
+2️⃣ JPA (Java Persistence API)
+Definition: A standard specification in Java for ORM. It defines a set of interfaces and annotations for mapping Java objects to database tables.
+
+It’s just an API, not an implementation.
+
+Common annotations:
+
+@Entity
+@Table(name = "users")
+public class User {
+    @Id
+    @GeneratedValue
+    private Long id;
+
+    private String name;
+}
+
+JPA does not manage the database itself—it needs an implementation to work (like Hibernate).
+
+3️⃣ Hibernate
+
+Definition: The most popular implementation of JPA.
+
+Hibernate provides the actual code that manages database CRUD operations based on JPA annotations.
+
+You write no or minimal SQL—Hibernate translates your object changes into database actions.
+
+Hibernate supports:
+
+-->Lazy loading
+-->Caching
+-->HQL (Hibernate Query Language)
+
+✅ How they relate:
+
+Concept	Role:
+
+ORM	: The concept of mapping objects to database tables.
+JPA	: The standard/specification for ORM in Java.
+Hibernate : A popular implementation of JPA providing actual ORM behavior.
